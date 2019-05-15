@@ -1,2 +1,9 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<h3><%=@item.name%></h3>
+<hr />
+<h4> Price: $<%= @item.price%> </h4>
+<h4> In Stock: <%= @item.in_stock == true ? "Yes" : "No" %> </h4>
+<br>
+<%= link_to "Edit Item Details", edit_department_item_path(@department.id, @item.id)%>
+<br>
+<%= link_to "Back To Items List", department_items_path(@department.id)%>
+
