@@ -14,7 +14,7 @@ class DepartmentsController < ApplicationController
   end
 
   def update
-    if @department.save
+    if @department.update(department_params)
       redirect_to departments_path
     else
      render partial: "form"
@@ -22,7 +22,7 @@ class DepartmentsController < ApplicationController
   end
 
   def new
-    @department = @Department.new()
+    @department = Department.new()
     render partial: "form"
   end
 
